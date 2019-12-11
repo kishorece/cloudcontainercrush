@@ -1,0 +1,29 @@
+.panel {
+    height : 250px;
+    margin-bottom:0;
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel .panel-footer {
+    position : absolute;
+    bottom : 0;
+    margin-bottom:1px;
+    width : 100%;
+    background-color: #f5f5f5;
+    border-top: 1px solid #dddddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.panel-heading {
+    font-size: 17.5px;
+    font-weight: 500;      
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #dddddd;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
