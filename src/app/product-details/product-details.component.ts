@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ElementRef} from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { FetchProductsService } from '../fetch-products.service';
 import { Location } from '@angular/common';
-import * as _ from "lodash"
+import * as _ from "lodash";
+import { Options } from 'ng5-slider';
 
 @Component({
   selector: 'app-product-details',
@@ -11,11 +12,15 @@ import * as _ from "lodash"
 })
 export class ProductDetailsComponent implements OnInit {
   public individualProduct;
-  constructor(private location: Location,private _route: ActivatedRoute,private router: Router,private productservice: FetchProductsService) { }
+  
+
+  constructor(private location: Location,private _route: ActivatedRoute,private router: Router,private productservice: FetchProductsService){ }
 public uniqueBrand = [];
 public uniqueColor = [];
 public uniqueSize = [];
+public uniquePrice  = [];
   ngOnInit() {
+    
     let className = this._route.snapshot.paramMap.get('className');
     
 
@@ -35,6 +40,11 @@ this.uniqueColor = _.uniqBy(this.individualProduct,function (individualProduct) 
 this.uniqueSize = _.uniqBy(this.individualProduct,function (individualProduct) {
   return individualProduct.skuattValue1;
 });
+this.uniquePrice = _.uniqBy(this.individualProduct,function (individualProduct) {
+  return individualProduct.listPrice;
+});
+
+
 
 
   
@@ -58,11 +68,13 @@ this.uniqueSize = _.uniqBy(this.individualProduct,function (individualProduct) {
   brand;
   color;
   size;
+  price;
   removeFilters(): any {
     //window.location.reload();
     this.brand='';
     this.color='';
     this.size='';
+    this.price='';
 
   }
   

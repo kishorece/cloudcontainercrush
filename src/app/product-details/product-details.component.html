@@ -52,9 +52,18 @@
               </select>
         
   </div>
+  <div class="form-group">
+    <label>Price</label>
+    <select [(ngModel)]="price" #category="ngModel" name="price" class="form-control" id="category">
+          <option *ngFor="let x of uniquePrice" [value]="x.listPrice">{{x.listPrice}}</option>
+        </select>
+  
+</div>
   <div>
   <a class="btn btn-warning" (click)="removeFilters()">Clear Filter </a>
 </div>
+
+
 </div>
   
   
@@ -71,7 +80,7 @@
   </h1>
   
   
-    <div  *ngFor="let detail of individualProduct | filter:brand|filter:size|filter:color" class="col-md-3" [routerLink]="['/item',detail.itemNumber]">
+    <div  *ngFor="let detail of individualProduct | filter:brand|filter:size|filter:color|filter:price" class="col-md-3" [routerLink]="['/item',detail.itemNumber]">
 
       <div class="panel panel-info zoom" role= "button">
         <div class="panel-heading" ><h6>{{detail.description | uppercase}}</h6></div>

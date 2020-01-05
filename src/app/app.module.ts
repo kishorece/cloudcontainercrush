@@ -15,7 +15,7 @@ import { AudioComponentComponent } from './audio-component/audio-component.compo
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FullTextSearchComponent } from './full-text-search/full-text-search.component';
 import { SingleProductComponent } from './single-product/single-product.component';
-
+import { Ng5SliderModule } from 'ng5-slider';
 
 
 @NgModule({
@@ -33,6 +33,7 @@ import { SingleProductComponent } from './single-product/single-product.componen
     BrowserModule,
     HttpClientModule,
     FormsModule, 
+    Ng5SliderModule,
     Ng2SearchPipeModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([

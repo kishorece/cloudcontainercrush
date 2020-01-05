@@ -31,6 +31,7 @@
     "lodash": "^4.17.15",
     "ng2-search-filter": "^0.5.1",
     "ng4-loading-spinner": "^1.2.3",
+    "ng5-slider": "^1.2.4",
     "popper.js": "^1.16.0",
     "recordrtc": "^5.5.8",
     "rxjs": "~6.4.0",
