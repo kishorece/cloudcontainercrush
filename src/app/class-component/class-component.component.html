@@ -12,7 +12,7 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<ul class="nav navbar-nav">
       <li class="nav-item"><a [routerLink]="['/home']" class="nav-link">Home</a></li>		
-      <li class="nav-item"><a [routerLink]="['/audio']" class="nav-link">voice Search!!!</a></li>	
+      <li class="nav-item"><a [routerLink]="['/audio']" class="nav-link">voiceSearch!!!</a></li>	
 		</ul>
 		<form class="navbar-form form-inline navbar-right ml-auto">
 			<div class="input-group search-box">
@@ -24,36 +24,26 @@
 		</form>		
 	</div>
 </nav>
-    
-  <div class="row"  myMatchHeight="panel"style="text-align:center">
-    
-        <div *ngFor = "let x of categories"  [routerLink]="['/category',x]" class="col-md-3">
+        <div class="row"  myMatchHeight="panel"style="text-align:center">
+
+
+        
+                <div *ngFor="let x of allDetails" class="col-md-3" [routerLink]="['/product',x.className]">
             
-          <div class="panel panel-danger">
-                    <div class="panel-body panel-height zoom" role= "button" style="margin: 25px;">
+                  <div class="panel panel-danger">
+                    
+                    <div class="panel-body panel-height zoom" role= "button" style="margin: 25px;" >
                      
                         
-                        <img src="assets/{{x}}.png" alt="Preview Not Available" height ="75" width="75"  >
+                        <img src="assets/{{x.className}}.png" alt="Preview Not Available" height ="75" width="75"  >
                         
-                      
-                      </div>
             
-                 
-                    <div class="panel-footer">
-                      
-                        <h6>{{x}}</h6>
                     </div>
-          
-                
-      
-            </div>
-              
-           
-            
-            
-        </div>
-    
-    </div>
-
-
-    
+                    <div class="panel-footer">
+                        <br/><br/>
+                        <h6>{{x.className}}</h6>
+                    </div>
+                    
+                  </div>
+                  </div>
+                  </div>

@@ -1,23 +1,4 @@
-.box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.w3-tangerine {
-    font-family: "Tangerine", serif;
-  }
-
-  .panel-footer {
-    height: 100px;    
-    overflow: hidden;
-}
-
-html,body,h1,h2,h3,h4,h5,h6 {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-  }
-
-
-  zoom {
+zoom {
     padding: 50px;
     background-color: green;
     transition: transform .2s; /* Animation */
@@ -25,9 +6,12 @@ html,body,h1,h2,h3,h4,h5,h6 {
     height: 200px;
     margin: 0 auto;
   }
+  html,body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
   
   .zoom:hover {
-    transform: scale(1.75); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 
   [role=button]{cursor:pointer}
@@ -138,3 +122,4 @@ html,body,h1,h2,h3,h4,h5,h6 {
         display: block;
     }
 }
+

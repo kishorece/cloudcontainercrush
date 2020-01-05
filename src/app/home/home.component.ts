@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchProductsService } from '../fetch-products.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,13 @@ import { FetchProductsService } from '../fetch-products.service';
 export class HomeComponent implements OnInit {
 
   allDetails: any;
+  className:any;
+  categories = ["Clothing", "Footwear", "Luggage and handbags and packs and cases","Personal care products","Sewing supplies and accessories"];
   constructor(private productservice: FetchProductsService) { }
 
 
   ngOnInit() {
+   
     this.productservice.getAllDetails().subscribe(
       
       data => {
@@ -24,9 +28,12 @@ export class HomeComponent implements OnInit {
         console.log("some error occured");
         console.log(error.errorMessage)
       }
-
-
     );
+
+    
+
+
+ 
 
   }
 

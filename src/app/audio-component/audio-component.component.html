@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+	<div class="navbar-header d-flex col">
+		<a class="navbar-brand" href="#">Cloud<b>Kart</b></a>  		
+		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
+			<span class="navbar-toggler-icon"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+		<ul class="nav navbar-nav">
+      <li class="nav-item"><a [routerLink]="['/home']" class="nav-link">Home</a></li>		
+      <li class="nav-item"><a [routerLink]="['/audio']" class="nav-link">voiceSearch!!!</a></li>	
+		</ul>
+		<form class="navbar-form form-inline navbar-right ml-auto">
+			<div class="input-group search-box">
+				<input type="text" class="form-control"[(ngModel)]="search" name="search" placeholder="Search">
+				<span class="input-group-btn">
+					<a [routerLink]="['/search',search]" class="btn btn-primary"><span>Search</span></a>
+				</span>
+			</div>
+		</form>		
+	</div>
+</nav>
+<div style="text-align:center">
+  <h1>
+    Explore the Power of IBM Watson!!!
+  </h1>
+
+  <a (click)="callMultiple()" class="btn btn-primary" *ngIf="!recording"> Start Searching </a>
+    <a (click)="stopRecording()" class="btn btn-danger" *ngIf="recording"> Listening!!!  </a>
+</div>
+
+<div>
+  <h1>you have searched for:{{filedata}}</h1>
+</div>
+
+
+
+
+
+
+<div class="row"  myMatchHeight="panel"style="text-align:center">
+  <div *ngFor="let detail of productList" class="col-md-3" [routerLink]="['/item',detail.ItemNumber]">
+  
+      <div class="panel panel-info zoom">
+  
+        <div  style="height: 20px;padding:0" class="panel-heading" ><h6>{{detail.Description | uppercase}}</h6></div>
+        <div class="panel-body panel-height" style="margin: 25px;" >
+         
+            
+            <img src="http://cc-flask3-cloud-warriors.inmbzp8022.in.dst.ibm.com/find_image?imagenum={{detail.ItemNumber}}" alt="Preview Not Available" height ="75" width="75"  >
+            
+  
+        </div>
+        <div class="panel-footer">
+        <h6>BRAND:{{detail.Brand}}</h6><br/>
+      <h6>PRICE:{{detail.ListPrice | currency}}</h6><br/> 
+    <h6>AVAILABILITY:{{detail.INSTOCK}}</h6>
+        </div>
+        
+      </div>
+  
+      <br/>
+    </div>
+  
+  </div>
+
+
+
